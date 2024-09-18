@@ -11,5 +11,9 @@
       ansible.builtin.uri:
         url: "{{ jenkins_webhook_url }}"
         method: POST
+        body_format: json
         validate_certs: no
+        body:
+          ansible_controller: {{ ansible_env.AWX_HOST }}
+          ansible_workflow_id: {{ awx_workflow_job_id }}
       run_once: yes
