@@ -1,0 +1,13 @@
+- name: Callback to Jenkins
+  hosts: all
+  connection: local
+  become: no
+  tasks:
+    - name: Printing variables for development
+      ansible.builtin.debug:
+        var: hostvars[inventory_hostname]
+
+    - name: ansible.builtin.uri:
+        url: "{{ jenkins_webhook_url }}
+        method: POST
+        run_once: yes
