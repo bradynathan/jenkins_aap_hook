@@ -9,6 +9,6 @@
 
     - name: Webhook Callback to Jenkins
       ansible.builtin.uri:
-        url: "{{ jenkins_webhook_url }}
+        url: "{{ jenkins_webhook_url }}"
         method: POST
         run_once: yes
