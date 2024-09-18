@@ -5,7 +5,7 @@
   tasks:
     - name: Printing variables for development
       ansible.builtin.debug:
-        var: hostvars[inventory_hostname]
+        var: hostvars
 
     - name: Webhook Callback to Jenkins
       ansible.builtin.uri:
