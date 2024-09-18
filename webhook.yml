@@ -11,4 +11,5 @@
       ansible.builtin.uri:
         url: "{{ jenkins_webhook_url }}"
         method: POST
-        run_once: yes
+        validate_certs: no
+      run_once: yes
